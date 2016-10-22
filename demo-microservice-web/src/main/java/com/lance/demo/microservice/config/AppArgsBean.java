@@ -1,6 +1,7 @@
 package com.lance.demo.microservice.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class AppArgsBean {
+
     @Autowired
     public AppArgsBean(ApplicationArguments args) {
         System.out.println( "参数:");

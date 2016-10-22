@@ -1,9 +1,11 @@
 package com.lance.demo.microservice;
 
+import com.lance.demo.microservice.config.PropertiesConfig;
 import com.lance.demo.microservice.listeners.MyApplicationReadyEventListener;
 import com.lance.demo.microservice.listeners.MyApplicationStartedEventListener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 
 import java.util.Arrays;
@@ -11,6 +13,7 @@ import java.util.Arrays;
 /**
  * Created by perdonare on 2016/10/20.
  */
+@EnableConfigurationProperties({PropertiesConfig.class})
 @SpringBootApplication
 public class App {
     public static void main(String[] args) {
