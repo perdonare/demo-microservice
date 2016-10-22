@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import java.util.Arrays;
-
+//使用debug模式 可以在启动选项上加 --debug  或 idea里vm选项加 -Ddebug
 /**
  * Created by perdonare on 2016/10/20.
  */
@@ -15,7 +15,11 @@ import java.util.Arrays;
 public class App {
     public static void main(String[] args) {
         //初始化spring application
+        args = new String[]{"my args1","my args2"};
         SpringApplication springApplication = new SpringApplication(App.class);
+
+        //用途??
+        springApplication.setLogStartupInfo(false);
         //添加监听器
         springApplication.addListeners(new MyApplicationStartedEventListener(),new MyApplicationReadyEventListener());
         //获取spring环境配置
