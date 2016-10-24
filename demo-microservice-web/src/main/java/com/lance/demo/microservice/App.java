@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Profile;
 
 import java.util.Arrays;
 //使用debug模式 可以在启动选项上加 --debug  或 idea里vm选项加 -Ddebug

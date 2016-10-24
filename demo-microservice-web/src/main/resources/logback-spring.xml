@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml" />-->
+    <springProperty scope="context" name="log_path" source="log.path" defaultValue="/data/appLogs/aaa"/>
+    <springProperty scope="context" name="log_level" source="log.level" defaultValue="info"/>
+    <springProfile name="dev">
+        <logger name="com.javachen.example" level="TRACE" />
+        <appender name="LOGFILE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            </encoder>
+        </appender>
+    </springProfile>
+
+    <springProfile name="prod">
+        <appender name="LOGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <File>${log_path}/server.log</File>
+            <rollingPolicy
+                    class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${log_path}/server_%d{yyyy-MM-dd}.log.zip</FileNamePattern>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>%date [%thread] %-5level %logger{80} - %msg%n</pattern>
+            </layout>
+        </appender>
+    </springProfile>
+
+    <root level="${log_level}">
+        <appender-ref ref="LOGFILE" />
+    </root>
+
+    <logger name="com.javachen.example" level="DEBUG" />
+</configuration>

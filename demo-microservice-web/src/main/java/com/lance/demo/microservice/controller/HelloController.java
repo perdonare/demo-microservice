@@ -14,7 +14,7 @@ public class HelloController {
     private PropertiesConfig propertiesConfig;
     @RequestMapping("/")
     public String index() {
-        System.out.println(propertiesConfig.getAge()+propertiesConfig.getName()+propertiesConfig.getInnerProperty().getAddress());
+        System.out.println(propertiesConfig.getAge()+propertiesConfig.getName()+propertiesConfig.getInnerProperty().getAddress()+propertiesConfig.getTest_name());
         return "Greetings from Spring Boot!";
     }
 
