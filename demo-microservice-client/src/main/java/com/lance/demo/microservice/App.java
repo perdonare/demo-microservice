@@ -3,7 +3,6 @@ package com.lance.demo.microservice;
 import com.lance.demo.microservice.config.PropertiesConfig;
 import com.lance.demo.microservice.listeners.MyApplicationReadyEventListener;
 import com.lance.demo.microservice.listeners.MyApplicationStartedEventListener;
-import de.codecentric.boot.admin.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -17,7 +16,6 @@ import java.util.Arrays;
  */
 @EnableConfigurationProperties({PropertiesConfig.class})
 @SpringBootApplication
-@EnableAdminServer
 public class App {
     public static void main(String[] args) {
         //初始化spring application

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <!--<include resource="org/springframework/boot/logging/logback/base.xml" />-->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <jmxConfigurator/>
     <springProperty scope="context" name="log_path" source="log.path" defaultValue="/data/appLogs/aaa"/>
     <springProperty scope="context" name="log_level" source="log.level" defaultValue="info"/>
     <springProfile name="dev">
